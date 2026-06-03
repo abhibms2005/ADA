@@ -4,7 +4,7 @@ int a[10], dir[10];
 
 int getMobile(int n)
 {
-    int mobile = 0, pos = 0, i;
+    int mobile = 0, pos = -1, i;
 
     for(i = 0; i < n; i++)
     {
@@ -56,7 +56,7 @@ void johnsonTrotter(int n)
     {
         pos = getMobile(n);
 
-        if(a[pos] == 0)
+        if(pos == -1)
             break;
 
         if(dir[a[pos]-1] == 0)
