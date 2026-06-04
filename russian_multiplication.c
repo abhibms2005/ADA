@@ -9,10 +9,11 @@ void russian_peasent(int a, int b){
     a=a/2;
     b=b*2;
 }
+printf("Product:%d\n", result);
 }
 int main(){
     int a, b;
     printf("Enter value of a and b: ");
-    scanf("%d", &a, &b);
+    scanf("%d %d", &a, &b);
     russian_peasent(a,b);
 }
