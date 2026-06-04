@@ -76,7 +76,6 @@ int main()
     readGraph();
     topologicalSort();
 
-    // Check if topological sort is possible
     if (resultIndex == numVertices)
     {
         printf("\nTopological Order:\n");

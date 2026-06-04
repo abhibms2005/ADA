@@ -6,7 +6,7 @@ int isSafe(int currrow, int currcol){
     for(int previousrow=0; previousrow<currrow; previousrow++){
         int previouscol;
         previouscol=queencolumn[previousrow];
-        if(previouscol==currcol){
+        if (previouscol==currcol){
             return 0;
         }
         if (abs(previouscol-currcol)==abs(previousrow-currrow)){
@@ -15,29 +15,28 @@ int isSafe(int currrow, int currcol){
     }
     return 1;
 }
-void solveNqueens(int currrow, int totalqueens){
+void SolveNqueens (int currrow, int totalqueens){
     int currcol;
     for(currcol=0; currcol<totalqueens; currcol++){
         if(isSafe(currrow, currcol)){
             queencolumn[currrow]=currcol;
-            if (currrow== totalqueens-1){
+            if(currrow==totalqueens-1){
                 solutioncount++;
-                printf("Solution: \n%d", solutioncount);
+                printf("Solution:\n ", solutioncount);
                 for(int row=0; row<totalqueens; row++){
-                    printf("Row-> %d, Column-> %d\n", row, queencolumn[row]);
+                    printf("Row->%d, Col-> %d\n", row, queencolumn[row]);
                 }
                 printf("\n");
-            }
-            else{
-                solveNqueens(currrow + 1,totalqueens);
+            }else{
+                SolveNqueens(currrow+1, totalqueens);
             }
         }
     }
 }
 int main(){
     int n;
-    printf("Enter number of queens: ");
+    printf("ENter number of queens: ");
     scanf("%d", &n);
-    solveNqueens(0,n);
+    SolveNqueens(0,n);
     return 0;
 }
